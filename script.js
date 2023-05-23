@@ -1,18 +1,4 @@
 
-/*
-//Funciónes:
-
-function validarNumero(numero, mensaje){
-  while(isNaN(numero)){
-    alert("Por favor, ingresa un valor numerico")
-    numero = parseInt(prompt(mensaje))
-  }
-  return numero
-}
-
-
-
-
 
 //Producto: objetos (id, nombre ,marca, precio, stock)
 
@@ -64,8 +50,6 @@ function InteraccionPorElCarrito(){
       // Buscar el producto por su ID 
       const productoElegido = arrayProductos.find((e) => e.id === opcionProducto);
 
-      
-    
       //Agrega al carrito
       if (productoElegido) {
         // Verificar si hay suficiente stock
@@ -106,6 +90,7 @@ function InteraccionPorElCarrito(){
     
     // Mostrar el carrito de compras y precio final
     alert(mensajeCarrito);
+    console.table(carrito)
 }
 
-InteraccionPorElCarrito()*/
+InteraccionPorElCarrito()
