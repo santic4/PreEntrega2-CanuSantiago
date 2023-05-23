@@ -16,8 +16,6 @@ function verificarEnvioGratis(precioFinal) {
   }
 }
 
-//Producto: objetos (id, nombre ,marca, precio, stock)
-
 class Producto {
   constructor(id, nombre, marca, precio, categoria, codigo, stock) {
     this.id = id;
