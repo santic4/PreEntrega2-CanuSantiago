@@ -4,12 +4,152 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--Script-->
+
+    <script src="https://kit.fontawesome.com/bc66d95f57.js" crossorigin="anonymous"></script> 
+
     <link rel="stylesheet" href="./styles.css">
+
     <title>Calculador Precio Final</title>
 </head>
 <body>
   
-    <h1>Agregar productos a MiCarrito</h1> 
+    <h1>Agregar productos a MiCarrito</h1>
+
+    <nav>
+        <ul class="navbar">
+            <li><a href="#">Inicio</a></li>
+            <li><a href="#">Acerca</a></li>
+            <li><a href="#">Contacto</a></li>
+            <div class="botonesNav">
+            <button id="btnShowCrear">Créa tu cuenta</button>
+            <button  id="btnMostrarFormulario">Iniciar sesión</button>
+            </div> 
+          </ul>
+        </nav>
+    </nav>
+
+    <div class="contenedorCrear" id="Crear">
+        <ul>
+          <form>
+            <h2>Creá tu cuenta</h2>
+            <label for="emailCrear">Email: *</label>
+            <input type="email" name="email" id="emailCrear" placeholder="Ingrese su email:">
+    
+            <label for="passwordCrear">Contraseña: *</label>
+            <input type="password" id="passwordCrear" name="password"><i id="showPass" class="fa-solid fa-eye"></i>
+    
+            <label for="confirmPasswordCrear">Confirmar Contraseña: *</label>
+            <input type="password" id="confirmPasswordCrear" name="confirmPassword">
+          </form>
+    
+          <form>
+            <h3>Datos personales</h3>
+            <label for="nameCrear">¿Cuál es tu nombre? *</label>
+            <input type="text" name="nombre" id="nameCrear" placeholder="Ingrese su nombre">
+    
+            <label for="apellidoCrear">¿Cuál es tu apellido? *</label>
+            <input type="text" name="apellidoCrear" id="apellidoCrear" placeholder="Ingrese su apellido">
+    
+    
+            <label for="fechaNacimientoCrear">Fecha de Nacimiento: *</label>
+            <input type="date" id="fechaNacimientoCrear" name="fechaNacimiento">
+    
+            <label for="dniCrear">¿Cuál es tu D.N.I.? *</label>
+            <input type="text" id="dniCrear" name="dni" pattern="[0-9]{8}" maxlength="8" placeholder="Ingrese su DNI">
+    
+            <label for="telefono">Teléfono Celular: *</label>
+            <input type="tel" id="telefono" name="telefono" pattern="[0-9]{10}" maxlength="10"
+              placeholder="Ingrese su número de teléfono">
+    
+          </form>
+    
+          <input type="submit" name="btn" id="submit">
+          <button id="btnSalir">Salir</button>
+        </ul>
+      </div>
+
+      <div class="contenedorLogin" id="Login">
+        <ul>
+          <form>
+            <h2>Iniciar sesión</h2>
+            <label for="emailLogin">Email: *</label>
+            <input type="email" name="email" id="emailLogin" placeholder="Ingrese su email">
+    
+            <label for="passwordLogin">Contraseña: *</label>
+            <input type="password" id="passwordLogin" name="password" placeholder="Ingrese su contraseña">
+          </form>
+          <input type="submit" name="btnLogin" id="submitLogin" value="Iniciar sesión">
+          <button id="btnSalirLogin">Salir</button>
+        </ul>
+      </div>
+    
+
+   //ACA
+    
+
+   <!--  <section class="cuentaUsuario">
+
+        <button id="btnShowCrear">Créa tu cuenta</button>
+    
+        <div class="Crear-container">
+    
+        <div class="contenedorCrear" id="Crear">
+            <ul>
+            <form>
+                <h2>Creá tu cuenta</h2>
+                <label for="emailCrear">Email: *</label>
+                <input type="email" name="email" id="emailCrear" placeholder="Ingrese su email:">
+    
+                <label for="passwordCrear">Contraseña: *</label>
+                <input type="password" id="passwordCrear" name="password"><i id="showPass" class="fa-solid fa-eye"></i>
+    
+                <label for="confirmPasswordCrear">Confirmar Contraseña: *</label>
+                <input type="password" id="confirmPasswordCrear" name="confirmPassword">
+            </form>
+    
+            <form>
+                <h3>Datos personales</h3>
+                <label for="nameCrear">¿Cuál es tu nombre? *</label>
+                <input type="text" name="nombre" id="nameCrear" placeholder="Ingrese su nombre">
+    
+                <label for="apellidoCrear">¿Cuál es tu apellido? *</label>
+                <input type="text" name="apellidoCrear" id="apellidoCrear" placeholder="Ingrese su apellido">
+    
+                
+                <label for="fechaNacimientoCrear">Fecha de Nacimiento: *</label>
+                <input type="date" id="fechaNacimientoCrear" name="fechaNacimiento">
+                 
+                <label for="dniCrear">¿Cuál es tu D.N.I.? *</label>
+                <input type="text" id="dniCrear" name="dni" pattern="[0-9]{8}" maxlength="8" placeholder="Ingrese su DNI">
+    
+                <label for="telefono">Teléfono Celular: *</label>
+                <input type="tel" id="telefono" name="telefono" pattern="[0-9]{10}" maxlength="10" placeholder="Ingrese su número de teléfono">
+    
+            </form>
+    
+            <input type="submit" name="btn" id="submit">
+            </ul>
+        </div>
+    </div>
+    
+    <button id="btnMostrarFormulario">Iniciar sesión</button>
+    
+    <div class="contenedorLogin" id="Login">
+      <ul>
+        <form>
+          <h2>Iniciar sesión</h2>
+          <label for="emailLogin">Email: *</label>
+          <input type="email" name="email" id="emailLogin" placeholder="Ingrese su email">
+    
+          <label for="passwordLogin">Contraseña: *</label>
+          <input type="password" id="passwordLogin" name="password" placeholder="Ingrese su contraseña">
+        </form>
+        <input type="submit" name="btnLogin" id="submitLogin" value="Iniciar sesión">
+      </ul>
+    </div>
+    </section>--> 
 
     <script src="./script.js"></script>
 </body>

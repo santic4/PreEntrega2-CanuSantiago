@@ -1,3 +1,4 @@
+/*
 //Funciones
 
 function CalcularPrecioTotal() {
@@ -108,3 +109,87 @@ function InteraccionPorElCarrito() {
 }
 
 InteraccionPorElCarrito();
+*/
+
+/*
+
+mostrarBotonCrear = document.getElementById("btnShowCrear")
+mostrarBotonCrear.addEventListener("click", function() {
+  document.getElementById("Crear").classList.add("show");
+})
+
+const showPass = document.querySelector("#showPass")
+
+function verPass(){
+  let userPassword = document.getElementById("passwordCrear")
+
+  if (userPassword.type == "password"){
+    userPassword.type = "text";
+  }else{
+    userPassword.type = "password"
+  }
+}
+
+showPass.addEventListener("mouseover", verPass)
+showPass.addEventListener("mouseout", verPass)
+
+
+// Obtener referencias a los elementos del DOM
+const emailInput = document.getElementById('emailLogin');
+const passwordInput = document.getElementById('passwordLogin');
+const submitButton = document.getElementById('submitLogin');
+const btnMostrarFormulario = document.getElementById('btnMostrarFormulario');
+const contenedorLogin = document.getElementById('Login');
+
+// Agregar evento de clic al botón "Iniciar sesión"
+btnMostrarFormulario.addEventListener('click', function() {
+  contenedorLogin.style.display = 'block';
+});
+
+// Agregar un evento de escucha para el botón de inicio de sesión
+submitButton.addEventListener('click', function(event) {
+  event.preventDefault(); // Evitar el comportamiento predeterminado del formulario
+
+  // Obtener los valores de los campos de entrada
+  const email = emailInput.value;
+  const password = passwordInput.value;
+
+  // Realizar la lógica de inicio de sesión
+  if (email && password) {
+    // Aquí puedes realizar la validación del usuario y la contraseña con tu lógica de backend
+
+    // Simplemente mostramos un mensaje en la consola para este ejemplo
+    console.log('Inicio de sesión exitoso');
+  } else {
+    console.log('Por favor, complete todos los campos');
+  }
+});*/
+
+const btnClickCrear = document.getElementById("btnShowCrear");
+const btnClickLogin = document.getElementById("btnMostrarFormulario");
+const btnSalirCrear = document.getElementById("btnSalir");
+const btnSalirLogin = document.getElementById("btnSalirLogin");
+const contenedorCrear = document.getElementById("Crear");
+const contenedorLogin = document.getElementById("Login");
+
+btnClickCrear.addEventListener("click", () => {
+  contenedorCrear.style.display = "block";
+  contenedorLogin.style.display = "none";
+});
+
+btnClickLogin.addEventListener("click", () => {
+  contenedorLogin.style.display = "block";
+  contenedorCrear.style.display = "none";
+});
+
+btnSalirCrear.addEventListener("click", (event) => {
+  event.preventDefault();
+  contenedorCrear.style.display = "none";
+  contenedorLogin.style.display = "none";
+});
+
+btnSalirLogin.addEventListener("click", (event) => {
+  event.preventDefault();
+  contenedorLogin.style.display = "none";
+});
+//ACA
