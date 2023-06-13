@@ -14,25 +14,38 @@
     <title>Calculador Precio Final</title>
 </head>
 <body>
+
+    <header>
   
-    <h1>Agregar productos a MiCarrito</h1>
+    <h1>BANDOR LOVE</h1>
 
     <nav>
         <ul class="navbar">
             <li><a href="#">Inicio</a></li>
-            <li><a href="#">Acerca</a></li>
+            <li><a href="#">Categorias</a></li>
             <li><a href="#">Contacto</a></li>
+
             <div class="botonesNav">
             <button id="btnShowCrear">Créa tu cuenta</button>
             <button  id="btnMostrarFormulario">Iniciar sesión</button>
             </div> 
+
+            <li class="carrito-icon" id="carritoIcon">
+                <i class="fa-sharp fa-solid fa-cart-shopping"> Mi Carrito</i>
+            </li>
           </ul>
         </nav>
     </nav>
 
+   </header>
+
+   <main>
+
+    <section class="formsVerificarUser">
+
     <div class="contenedorCrear" id="Crear">
         <ul>
-          <form>
+          <form id="crearFormulario">
             <h2>Creá tu cuenta</h2>
             <label for="emailCrear">Email: *</label>
             <input type="email" name="email" id="emailCrear" placeholder="Ingrese su email:">
@@ -65,8 +78,8 @@
     
           </form>
     
-          <input type="submit" name="btn" id="submit">
-          <button id="btnSalir">Salir</button>
+          <button type="button" name="btn" id="signUp">Enviar</button>
+        <button id="btnSalir">Salir</button>
         </ul>
       </div>
 
@@ -80,76 +93,40 @@
             <label for="passwordLogin">Contraseña: *</label>
             <input type="password" id="passwordLogin" name="password" placeholder="Ingrese su contraseña">
           </form>
-          <input type="submit" name="btnLogin" id="submitLogin" value="Iniciar sesión">
+          <button type="button" name="btn" id="signIn">Enviar</button>
           <button id="btnSalirLogin">Salir</button>
         </ul>
       </div>
-    
 
-   //ACA
+          
+    </section>
     
+    
+    <section class="carrito">
 
-   <!--  <section class="cuentaUsuario">
+        <div class="cardsProductos" id="productosContainer"></div>
 
-        <button id="btnShowCrear">Créa tu cuenta</button>
-    
-        <div class="Crear-container">
-    
-        <div class="contenedorCrear" id="Crear">
-            <ul>
-            <form>
-                <h2>Creá tu cuenta</h2>
-                <label for="emailCrear">Email: *</label>
-                <input type="email" name="email" id="emailCrear" placeholder="Ingrese su email:">
-    
-                <label for="passwordCrear">Contraseña: *</label>
-                <input type="password" id="passwordCrear" name="password"><i id="showPass" class="fa-solid fa-eye"></i>
-    
-                <label for="confirmPasswordCrear">Confirmar Contraseña: *</label>
-                <input type="password" id="confirmPasswordCrear" name="confirmPassword">
-            </form>
-    
-            <form>
-                <h3>Datos personales</h3>
-                <label for="nameCrear">¿Cuál es tu nombre? *</label>
-                <input type="text" name="nombre" id="nameCrear" placeholder="Ingrese su nombre">
-    
-                <label for="apellidoCrear">¿Cuál es tu apellido? *</label>
-                <input type="text" name="apellidoCrear" id="apellidoCrear" placeholder="Ingrese su apellido">
-    
-                
-                <label for="fechaNacimientoCrear">Fecha de Nacimiento: *</label>
-                <input type="date" id="fechaNacimientoCrear" name="fechaNacimiento">
-                 
-                <label for="dniCrear">¿Cuál es tu D.N.I.? *</label>
-                <input type="text" id="dniCrear" name="dni" pattern="[0-9]{8}" maxlength="8" placeholder="Ingrese su DNI">
-    
-                <label for="telefono">Teléfono Celular: *</label>
-                <input type="tel" id="telefono" name="telefono" pattern="[0-9]{10}" maxlength="10" placeholder="Ingrese su número de teléfono">
-    
-            </form>
-    
-            <input type="submit" name="btn" id="submit">
-            </ul>
-        </div>
-    </div>
-    
-    <button id="btnMostrarFormulario">Iniciar sesión</button>
-    
-    <div class="contenedorLogin" id="Login">
-      <ul>
-        <form>
-          <h2>Iniciar sesión</h2>
-          <label for="emailLogin">Email: *</label>
-          <input type="email" name="email" id="emailLogin" placeholder="Ingrese su email">
-    
-          <label for="passwordLogin">Contraseña: *</label>
-          <input type="password" id="passwordLogin" name="password" placeholder="Ingrese su contraseña">
-        </form>
-        <input type="submit" name="btnLogin" id="submitLogin" value="Iniciar sesión">
-      </ul>
-    </div>
-    </section>--> 
+        <div id="carritoContainer">
+          <h2>Carrito de compras</h2>
+          <button class="btnHide" id="esconderCarrito"><i class="fa-solid fa-arrow-right"></i></button>
+          <ul id="carritoItems"></ul>
+          <p>Total: <span id="carritoTotal">$0</span></p>
+          <button id="vaciarCarrito">Vaciar carrito</button>
+
+          <!--boton no habilitado porque no lo enseñaron todavia-->
+          <button id="btnComprar">Comprar</button>
+          
+          </div>
+
+    </section>
+
+    </main>
+
+    <footer>
+
+      <p>JavaScript @santi_c4</p>
+
+    </footer>
 
     <script src="./script.js"></script>
 </body>
