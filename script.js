@@ -26,6 +26,7 @@ btnSalirCrear.addEventListener("click", (event) => {
 btnSalirLogin.addEventListener("click", (event) => {
   event.preventDefault();
   contenedorLogin.style.display = "none";
+  contenedorCrear.style.display = "none";
 });
 
 // Obtener elementos del formulario
@@ -48,12 +49,25 @@ function eventoSignUp(event) {
 
   // Verificar que los campos obligatorios estén completos
  
-  !email || !password || !confirmPassword || !nombre || !apellido || !fechaNacimiento || !dni || !telefono 
-  && (alert('Por favor, complete todos los campos obligatorios. (*), return'))
+  if (!email || !password || !confirmPassword || !nombre || !apellido || !fechaNacimiento || !dni || !telefono) {
+    Swal.fire({
+      title: 'Campos incompletos',
+      text: 'Por favor, complete todos los campos obligatorios.',
+      icon: 'warning',
+      confirmButtonText: 'Aceptar'
+    });
+    contenedorCrear.style.display = "none";
+    return;
+  }
 
   // Verificar que las contraseñas coincidan
   if (password !== confirmPassword) {
-    alert('Las contraseñas no coinciden. Por favor, verifique.')
+    Swal.fire(
+      'Las contraseñas no coinciden.',
+      ' Por favor, verifique.',
+      'error'
+    )
+    contenedorCrear.style.display = "none";
     return
   }
 
@@ -80,6 +94,8 @@ function eventoSignUp(event) {
   // Agregar el usuario al arreglo de usuarios
   usuarios.push(usuario);
 
+  contenedorCrear.style.display = "none";
+
   // Guardar el arreglo de usuarios actualizado en el LocalStorage
   localStorage.setItem('usuarios', JSON.stringify(usuarios));
 
@@ -87,9 +103,70 @@ function eventoSignUp(event) {
   formCrear.reset();
 
   // Mostrar un mensaje de éxito
-  alert('Usuario registrado correctamente.');
 
-  
+  Swal.fire({
+    title: 'Bienvenido!',
+    text: "Usuario registrado correctamente.",
+    icon: "success",
+    timer: 2000,
+    showConfirmButton: false,
+    
+  });
+
+  usuario ?
+  (btnShowCrear.style.display = 'none',
+  btnMostrarFormulario.style.display = 'none',
+  carritoIcon.style.display = 'block',
+  carritoContainer.style.display = 'block',
+  localStorage.setItem('carrito', JSON.stringify(carrito))) :
+
+  usuario 
+
+}
+
+// Función para manejar el evento de inicio de sesión
+function eventoSignIn(event) {
+  event.preventDefault(); // Prevenir el envío del formulario por defecto
+
+  // Obtener los valores de los campos del formulario
+  const email = document.getElementById('emailLogin').value;
+  const password = document.getElementById('passwordLogin').value;
+
+  // Verificar que los campos obligatorios estén completos
+  if (!email || !password) {
+    Swal.fire(
+      'Por favor, complete todos los campos obligatorios.',
+      'warning'
+    )
+    return;
+  }
+
+  // Obtener el arreglo de usuarios del LocalStorage
+  let usuarios = JSON.parse(localStorage.getItem('usuarios')) || [];
+
+  // Buscar el usuario por email y contraseña
+  const usuario = usuarios.find((u) => u.email === email && u.password === password);
+
+  // Verificar si el usuario existe
+  usuario ?
+  (btnShowCrear.style.display = 'none',
+  btnMostrarFormulario.style.display = 'none',
+  carritoIcon.style.display = 'block',
+  carritoContainer.style.display = 'block',
+  localStorage.setItem('carrito', JSON.stringify(carrito))) :
+  Swal.fire(
+    'Usuario no encontrado.',
+    'Contraseña o email incorrectos.',
+    'error'
+  )
+
+  usuario 
+
+  contenedorLogin.style.display = "none";
+
+  localStorage.setItem('carrito', JSON.stringify(carrito));
+
+  actualizarCarrito ()
 }
 
 // Función para generar un ID único para el usuario
@@ -111,47 +188,19 @@ function generateUserId() {
   return newUserId;
 }
 
+//SetTimeout para registrarse/inicar sesion
+setTimeout(() => {
+
+  let TimeoutUser = document.getElementsByClassName("formsVerificarUser")
+  
+  contenedorCrear.style.display = 'block';
+
+},6000)
+
 // Obtener elementos del formulario
 
 const signInButton = document.getElementById('signIn');
 
-// Función para manejar el evento de inicio de sesión
-function eventoSignIn(event) {
-  event.preventDefault(); // Prevenir el envío del formulario por defecto
-
-  // Obtener los valores de los campos del formulario
-  const email = document.getElementById('emailLogin').value;
-  const password = document.getElementById('passwordLogin').value;
-
-  // Verificar que los campos obligatorios estén completos
-  if (!email || !password) {
-    alert('Por favor, complete todos los campos obligatorios.');
-    return;
-  }
-
-  // Obtener el arreglo de usuarios del LocalStorage
-  let usuarios = JSON.parse(localStorage.getItem('usuarios')) || [];
-
-  // Buscar el usuario por email y contraseña
-  const usuario = usuarios.find((u) => u.email === email && u.password === password);
-
-  // Verificar si el usuario existe
-  usuario ?
-  (btnShowCrear.style.display = 'none',
-  btnMostrarFormulario.style.display = 'none',
-  carritoIcon.style.display = 'block',
-  carritoContainer.style.display = 'block',
-  localStorage.setItem('carrito', JSON.stringify(carrito))) :
-  alert('Usuario no encontrado, o contraseña/email incorrectos.');
-
-  usuario 
-
-  contenedorLogin.style.display = "none";
-
-  localStorage.setItem('carrito', JSON.stringify(carrito));
-
-  actualizarCarrito ()
-}
 
 // Agregar un evento de escucha al botón "Enviar"
 signInButton.addEventListener('click', eventoSignIn);
@@ -313,7 +362,9 @@ function eliminarDelCarrito(producto) {
   const index = carrito.indexOf(producto);
  
   index > -1 && (carrito.splice(index, 1), actualizarCarrito())
+
 }
+
 
 // Función para crear una card de producto en el carrito
 function crearCardProductoCarrito(producto) {
@@ -333,7 +384,11 @@ function crearCardProductoCarrito(producto) {
   const removeBtn = document.createElement('button');
   removeBtn.textContent = 'Eliminar';
   removeBtn.addEventListener('click', () => {
+
+
+    
     eliminarDelCarrito(producto);
+
   });
   card.appendChild(removeBtn);
 
@@ -358,3 +413,7 @@ function vaciarCarrito() {
   actualizarCarrito();
   localStorage.setItem('carrito', JSON.stringify(carrito));
 }
+
+
+fetch("https://developer.walmart.com/api/us/dsv/inventory#operation/getMultiNodeInventoryForSkuAndAllShipnodes")
+.then((res) => res.json())
