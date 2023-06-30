@@ -1,0 +1,224 @@
+[
+    {
+      "id": "1",
+      "nombre": "El Eternauta",
+      "marca": "Héctor Oesterheld",
+      "precio": 5.599,
+      "categoria": "Libros",
+      "codigo": "LIB-1",
+      "imagen": "/images/eternauta.png",
+      "stock": 7
+    },
+    {
+      "id": "2",
+      "nombre": "1984",
+      "marca": "George Orwell",
+      "precio": 12.99,
+      "categoria": "Libros",
+      "codigo": "LB011",
+      "imagen": "../images/1984.jpeg",
+      "stock": 10
+    },
+    {
+      "id": 3,
+      "nombre": "El Gran Gatsby",
+      "marca": "F. Scott Fitzgerald",
+      "precio": 9.99,
+      "categoria": "Libros",
+      "codigo": "LB012",
+      "imagen": "./images/ElGranGatsby.jpeg",
+      "stock": 8
+    },
+    {
+      "id": 4,
+      "nombre": "Cien años de soledad",
+      "marca": "Gabriel García Márquez",
+      "precio": 14.99,
+      "categoria": "Libros",
+      "codigo": "LB013",
+      "imagen": "ruta/imagen1.jpg",
+      "stock": 15
+    },
+    {
+      "id": 5,
+      "nombre": "Matar a un ruiseñor",
+      "marca": "Harper Lee",
+      "precio": 11.99,
+      "categoria": "Libros",
+      "codigo": "LB014",
+      "imagen": "ruta/imagen1.jpg",
+      "stock": 5
+    },
+    {
+      "id": 6,
+      "nombre": "El señor de los anillos",
+      "marca": "J.R.R. Tolkien",
+      "precio": 18.99,
+      "categoria": "Libros",
+      "codigo": "LB015",
+      "imagen": "ruta/imagen1.jpg",
+      "stock": 12
+    },
+    {
+      "id": 7,
+      "nombre": "Remera Adidas",
+      "marca": "Adidas",
+      "precio": 11.559,
+      "categoria": "Ropa",
+      "codigo": "I-AD-01",
+      "imagen": "ruta/imagen1.jpg",
+      "stock": 30
+    },
+    {
+      "id": 8,
+      "nombre": "Auriculares Bluetooth",
+      "marca": "Sony",
+      "precio": 23.999,
+      "categoria": "Electronica",
+      "codigo": "E-AU-01",
+      "imagen": "ruta/imagen1.jpg",
+      "stock": 15
+    },
+    {
+      "id": 9,
+      "nombre": "Zapatillas",
+      "marca": "Adidas",
+      "precio": 28.159,
+      "categoria": "Ropa",
+      "codigo": "I-ZA-01",
+      "imagen": "ruta/imagen1.jpg",
+      "stock": 3
+    },
+    {
+      "id": 10,
+      "nombre": "TEG",
+      "marca": "Ruibal",
+      "precio": 4.359,
+      "categoria": "Juegos",
+      "codigo": "J-M-01",
+      "imagen": "ruta/imagen1.jpg",
+      "stock": 10
+    },
+    {
+      "id": 11,
+      "nombre": "Televisor LED",
+      "marca": "Sony",
+      "precio": 599.99,
+      "categoria": "Electrónica",
+      "codigo": "TV001",
+      "imagen": "ruta/imagen1.jpg",
+      "stock": 20
+    },
+    {
+      "id": 12,
+      "nombre": "Smartphone",
+      "marca": "Samsung",
+      "precio": 799.99,
+      "categoria": "Electrónica",
+      "codigo": "PH002",
+      "imagen": "ruta/imagen1.jpg",
+      "stock": 15
+    },
+    {
+      "id": 13,
+      "nombre": "Auriculares inalámbricos",
+      "marca": "Apple",
+      "precio": 199.99,
+      "categoria": "Electrónica",
+      "codigo": "AU010",
+      "imagen": "ruta/imagen1.jpg",
+      "stock": 30
+    },
+    {
+      "id": 14,
+      "nombre": "Camiseta",
+      "marca": "Nike",
+      "precio": 29.99,
+      "categoria": "Ropa",
+      "codigo": "RO001",
+      "imagen": "ruta/imagen1.jpg",
+      "stock": 50
+    },
+    {
+      "id": 15,
+      "nombre": "Pantalones vaqueros",
+      "marca": "Levi's",
+      "precio": 79.99,
+      "categoria": "Ropa",
+      "codigo": "RO002",
+      "imagen": "ruta/imagen1.jpg",
+      "stock": 25
+    },
+    
+    {
+      "id": 16,
+      "nombre": "Zapatos deportivos",
+      "marca": "Adidas",
+      "precio": 99.99,
+      "categoria": "Ropa",
+      "codigo": "RO010",
+      "imagen": "ruta/imagen1.jpg",
+      "stock": 40
+    },
+    {
+      "id": 17,
+      "nombre": "Juego de sábanas",
+      "marca": "Ikea",
+      "precio": 49.99,
+      "categoria": "Hogar",
+      "codigo": "HO001",
+      "imagen": "ruta/imagen1.jpg",
+      "stock": 30
+    },
+    {
+      "id": 18,
+      "nombre": "Sartén antiadherente",
+      "marca": "T-fal",
+      "precio": 39.99,
+      "categoria": "Hogar",
+      "codigo": "HO002",
+      "imagen": "ruta/imagen1.jpg",
+      "stock": 20
+    },
+    
+    {
+      "id": 19,
+      "nombre": "Aspiradora robot",
+      "marca": "Roomba",
+      "precio": 299.99,
+      "categoria": "Hogar",
+      "codigo": "HO010",
+      "imagen": "ruta/imagen1.jpg",
+      "stock": 10
+    },
+    {
+      "id": 20,
+      "nombre": "Muñeca",
+      "marca": "Barbie",
+      "precio": 19.99,
+      "categoria": "Juegos",
+      "codigo": "JU001",
+      "imagen": "ruta/imagen1.jpg",
+      "stock": 40
+    },
+    {
+      "id": 21,
+      "nombre": "Coche de control remoto",
+      "marca": "Maisto",
+      "precio": 39.99,
+      "categoria": "Juegos",
+      "codigo": "JU002",
+      "imagen": "ruta/imagen1.jpg",
+      "stock": 15
+    },
+    {
+      "id": 22,
+      "nombre": "Juego de construcción",
+      "marca": "LEGO",
+      "precio": 49.99,
+      "categoria": "Juegos",
+      "codigo": "JU010",
+      "imagen": "ruta/imagen1.jpg",
+      "stock": 25
+    }
+  ]

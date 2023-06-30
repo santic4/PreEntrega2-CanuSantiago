@@ -7,6 +7,8 @@ const btnSalirLogin = document.getElementById("btnSalirLogin");
 const contenedorCrear = document.getElementById("Crear");
 const contenedorLogin = document.getElementById("Login");
 
+//Acción de botones Login/Crear
+
 btnClickCrear.addEventListener("click", () => {
   contenedorCrear.style.display = "block";
   contenedorLogin.style.display = "none";
@@ -33,6 +35,15 @@ btnSalirLogin.addEventListener("click", (event) => {
 const formCrear = document.getElementById('crearFormulario');
 const signUpButton = document.getElementById('signUp');
 
+//SetTimeout para registrarse/inicar sesion
+/*setTimeout(() => {
+
+  let TimeoutUser = document.getElementsByClassName("formsVerificarUser")
+  
+  contenedorCrear.style.display = 'block';
+
+},6000)*/
+
 // Función para manejar el evento de envío del formulario
 function eventoSignUp(event) {
   event.preventDefault(); // Prevenir el envío del formulario por defecto
@@ -57,6 +68,8 @@ function eventoSignUp(event) {
       confirmButtonText: 'Aceptar'
     });
     contenedorCrear.style.display = "none";
+
+  formCrear.reset();
     return;
   }
 
@@ -68,6 +81,8 @@ function eventoSignUp(event) {
       'error'
     )
     contenedorCrear.style.display = "none";
+
+  formCrear.reset();
     return
   }
 
@@ -188,15 +203,6 @@ function generateUserId() {
   return newUserId;
 }
 
-//SetTimeout para registrarse/inicar sesion
-setTimeout(() => {
-
-  let TimeoutUser = document.getElementsByClassName("formsVerificarUser")
-  
-  contenedorCrear.style.display = 'block';
-
-},6000)
-
 // Obtener elementos del formulario
 
 const signInButton = document.getElementById('signIn');
@@ -210,31 +216,10 @@ signInButton.addEventListener('click', eventoSignIn);
 signUpButton.addEventListener('click', eventoSignUp);
 
 
+                                                              /*DOM*/
 
-                                                            /*PRODUCTOS*/
-
-// Clase Producto
-class Producto {
-  constructor(id, nombre, marca, precio, categoria, codigo, stock) {
-    this.id = id;
-    this.nombre = nombre;
-    this.marca = marca;
-    this.precio = precio;
-    this.categoria = categoria;
-    this.codigo = codigo;
-    this.stock = stock;
-  }
-}
-
-// Crear instancias de productos
-const libroElEternauta = new Producto(1, "El Eternauta", "Héctor Oesterheld", 5.599, "Libros", "LIB-1", 7);
-const camisetaAdidas = new Producto(2, "Remera Adidas", "Adidas", 11.559, "Indumentaria", "I-AD-01", 30);
-const auricularesBluetooth = new Producto(3, "Auriculares Bluetooth", "Sony", 23.999, "Electronica", "E-AU-01", 15);
-const zapatillasDeportivas = new Producto(4, "Zapatillas", "Adidas", 28.159, "Indumentaria", "I-ZA-01", 3);
-const juegoMesaTEG = new Producto(5, "TEG", "Ruibal", 4.359, "Juego de Mesa", "J-M-01", 10);
-
-// Array de productos
-const arrayProductos = [libroElEternauta, camisetaAdidas, auricularesBluetooth, zapatillasDeportivas, juegoMesaTEG];
+// Variables globales para almacenar los datos de los productos
+let productos = [];
 
 // Función para crear una card de producto
 function crearCardProducto(producto) {
@@ -258,36 +243,51 @@ function crearCardProducto(producto) {
   card.appendChild(stock);
 
   const addToCartBtn = document.createElement('button');
-
   addToCartBtn.textContent = 'Agregar al carrito';
 
-  card.classList.add("Carta")
-
   addToCartBtn.addEventListener('click', () => {
-
-  //Restar uno al stock de la card
-
-    producto.stock > 0
-    && (agregarAlCarrito(producto), producto.stock -= 1,  stock.textContent = 'Stock: ' + producto.stock)
-    producto.stock == 0 && (addToCartBtn.innerHTML = '<h4>Sin stock</h4>')
-
+    if (producto.stock > 0) {
+      agregarAlCarrito(producto);
+      producto.stock -= 1;
+      stock.textContent = 'Stock: ' + producto.stock;
+      if (producto.stock === 0) {
+        addToCartBtn.innerHTML = '<h4>Sin stock</h4>';
+      }
+    }
   });
-  card.appendChild(addToCartBtn);
 
+  card.appendChild(addToCartBtn);
   return card;
 }
 
+// Función para filtrar y mostrar los productos
+function filtrarProductos(categoria) {
+  const productosFiltrados = categoria ? productos.filter(producto => producto.categoria === categoria) : productos;
+  mostrarProductos(productosFiltrados);
+}
 
+// Función para mostrar los productos en el DOM
+function mostrarProductos(productosMostrar) {
+  productosContainer.innerHTML = ''; // Limpiar el contenedor de productos
+
+  productosMostrar.forEach(producto => {
+    const card = crearCardProducto(producto);
+    productosContainer.appendChild(card);
+  });
+}
 
 // Obtener el contenedor de productos y carrito
 const productosContainer = document.getElementById('productosContainer');
 const carritoContainer = document.getElementById('carritoContainer');
 
-// Crear las cards de productos y agregarlas al contenedor de productos
-arrayProductos.forEach((producto) => {
-  const card = crearCardProducto(producto);
-  productosContainer.appendChild(card);
-});
+// Cargar los datos de productos y mostrarlos
+fetch('./productos.json')
+  .then(res => res.json())
+  .then(data => {
+    productos = data;
+    mostrarProductos(productos);
+  });
+
 
                                                                  /*CARRITO*/
 
@@ -381,12 +381,14 @@ function crearCardProductoCarrito(producto) {
   price.textContent = '$' + producto.precio;
   card.appendChild(price);
 
+  const img = document.createElement('img');
+  img.src = producto.imagen;
+  card.appendChild(img);
+
   const removeBtn = document.createElement('button');
   removeBtn.textContent = 'Eliminar';
   removeBtn.addEventListener('click', () => {
 
-
-    
     eliminarDelCarrito(producto);
 
   });
@@ -394,6 +396,8 @@ function crearCardProductoCarrito(producto) {
 
   return card;
 }
+
+
 
 // Función para agregar un producto al carrito
 function agregarAlCarrito(producto) {
@@ -414,6 +418,24 @@ function vaciarCarrito() {
   localStorage.setItem('carrito', JSON.stringify(carrito));
 }
 
+// Conseguir producto desde .json
+function getProducto(){
+  fetch("./productos.json")
+  .then(res => res.json())
+  .then(data => crearCardProductoCarrito(data))
+}
 
-fetch("https://developer.walmart.com/api/us/dsv/inventory#operation/getMultiNodeInventoryForSkuAndAllShipnodes")
-.then((res) => res.json())
+//Finalizar compra
+const Comprar = document.getElementById("btnComprar")
+Comprar.addEventListener('click', finalizarCompra)
+
+function finalizarCompra(){
+
+  Swal.fire({
+    title: 'Compra exitosa',
+    text: 'Nos comunicaremos en las próximas 24 horas hábiles con usted. Muchas gracias :)',
+    icon: 'success',
+    confirmButtonText: 'Aceptar'
+  });
+}
+
