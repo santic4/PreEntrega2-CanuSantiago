@@ -238,6 +238,11 @@ function crearCardProducto(producto) {
   price.textContent = 'Precio: $' + producto.precio;
   card.appendChild(price);
 
+  const img = document.createElement('img');
+  img.src = producto.imagen;
+  card.appendChild(img);
+  card.classList.add('imagenes');
+
   const stock = document.createElement('p');
   stock.textContent = 'Stock: ' + producto.stock;
   card.appendChild(stock);
@@ -381,10 +386,6 @@ function crearCardProductoCarrito(producto) {
   price.textContent = '$' + producto.precio;
   card.appendChild(price);
 
-  const img = document.createElement('img');
-  img.src = producto.imagen;
-  card.appendChild(img);
-
   const removeBtn = document.createElement('button');
   removeBtn.textContent = 'Eliminar';
   removeBtn.addEventListener('click', () => {
@@ -437,5 +438,6 @@ function finalizarCompra(){
     icon: 'success',
     confirmButtonText: 'Aceptar'
   });
+  vaciarCarrito()
 }
 

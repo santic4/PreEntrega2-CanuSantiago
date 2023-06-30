@@ -6,7 +6,7 @@
       "precio": 5.599,
       "categoria": "Libros",
       "codigo": "LIB-1",
-      "imagen": "/images/eternauta.png",
+      "imagen": "./images/eternauta.png",
       "stock": 7
     },
     {
@@ -16,7 +16,7 @@
       "precio": 12.99,
       "categoria": "Libros",
       "codigo": "LB011",
-      "imagen": "../images/1984.jpeg",
+      "imagen": "./images/1984.jpeg",
       "stock": 10
     },
     {
@@ -36,7 +36,7 @@
       "precio": 14.99,
       "categoria": "Libros",
       "codigo": "LB013",
-      "imagen": "ruta/imagen1.jpg",
+      "imagen": "./images/CienAñosDeSoledad.jpeg",
       "stock": 15
     },
     {
@@ -46,7 +46,7 @@
       "precio": 11.99,
       "categoria": "Libros",
       "codigo": "LB014",
-      "imagen": "ruta/imagen1.jpg",
+      "imagen": "./images/MatarAUnRuiseñor.jpeg",
       "stock": 5
     },
     {
@@ -56,7 +56,7 @@
       "precio": 18.99,
       "categoria": "Libros",
       "codigo": "LB015",
-      "imagen": "ruta/imagen1.jpg",
+      "imagen": "./images/ElSeñorDeLosAnillos.jpeg",
       "stock": 12
     },
     {
@@ -66,7 +66,7 @@
       "precio": 11.559,
       "categoria": "Ropa",
       "codigo": "I-AD-01",
-      "imagen": "ruta/imagen1.jpg",
+      "imagen": "./images/RemeraAdidas.webp",
       "stock": 30
     },
     {
@@ -76,7 +76,7 @@
       "precio": 23.999,
       "categoria": "Electronica",
       "codigo": "E-AU-01",
-      "imagen": "ruta/imagen1.jpg",
+      "imagen": "./images/AuricularesBluetooth.webp",
       "stock": 15
     },
     {
@@ -86,7 +86,7 @@
       "precio": 28.159,
       "categoria": "Ropa",
       "codigo": "I-ZA-01",
-      "imagen": "ruta/imagen1.jpg",
+      "imagen": "./images/Zapatillas.jpeg",
       "stock": 3
     },
     {
@@ -96,7 +96,7 @@
       "precio": 4.359,
       "categoria": "Juegos",
       "codigo": "J-M-01",
-      "imagen": "ruta/imagen1.jpg",
+      "imagen": "./images/TEG.jpeg",
       "stock": 10
     },
     {
@@ -106,7 +106,7 @@
       "precio": 599.99,
       "categoria": "Electrónica",
       "codigo": "TV001",
-      "imagen": "ruta/imagen1.jpg",
+      "imagen": "./images/TelevisorLED.jpeg",
       "stock": 20
     },
     {
@@ -116,7 +116,7 @@
       "precio": 799.99,
       "categoria": "Electrónica",
       "codigo": "PH002",
-      "imagen": "ruta/imagen1.jpg",
+      "imagen": "./images/Smartphone.jpeg",
       "stock": 15
     },
     {
@@ -126,7 +126,7 @@
       "precio": 199.99,
       "categoria": "Electrónica",
       "codigo": "AU010",
-      "imagen": "ruta/imagen1.jpg",
+      "imagen": "./images/AuricularesInalambricos.jpeg",
       "stock": 30
     },
     {
@@ -136,7 +136,7 @@
       "precio": 29.99,
       "categoria": "Ropa",
       "codigo": "RO001",
-      "imagen": "ruta/imagen1.jpg",
+      "imagen": "./images/Camiseta.jpg",
       "stock": 50
     },
     {
@@ -146,7 +146,7 @@
       "precio": 79.99,
       "categoria": "Ropa",
       "codigo": "RO002",
-      "imagen": "ruta/imagen1.jpg",
+      "imagen": "./images/PantalonesVaqueros.jpeg",
       "stock": 25
     },
     
@@ -157,7 +157,7 @@
       "precio": 99.99,
       "categoria": "Ropa",
       "codigo": "RO010",
-      "imagen": "ruta/imagen1.jpg",
+      "imagen": "./images/ZapatosDeportivos.jpeg",
       "stock": 40
     },
     {
@@ -167,7 +167,7 @@
       "precio": 49.99,
       "categoria": "Hogar",
       "codigo": "HO001",
-      "imagen": "ruta/imagen1.jpg",
+      "imagen": "./images/JuegoDeSabanas.jpeg",
       "stock": 30
     },
     {
@@ -177,7 +177,7 @@
       "precio": 39.99,
       "categoria": "Hogar",
       "codigo": "HO002",
-      "imagen": "ruta/imagen1.jpg",
+      "imagen": "./images/SartenAntiadherente.jpeg",
       "stock": 20
     },
     
@@ -188,7 +188,7 @@
       "precio": 299.99,
       "categoria": "Hogar",
       "codigo": "HO010",
-      "imagen": "ruta/imagen1.jpg",
+      "imagen": "./images/AspiradoraRobot.jpeg",
       "stock": 10
     },
     {
@@ -198,7 +198,7 @@
       "precio": 19.99,
       "categoria": "Juegos",
       "codigo": "JU001",
-      "imagen": "ruta/imagen1.jpg",
+      "imagen": "./images/Muneca.jpeg",
       "stock": 40
     },
     {
@@ -208,7 +208,7 @@
       "precio": 39.99,
       "categoria": "Juegos",
       "codigo": "JU002",
-      "imagen": "ruta/imagen1.jpg",
+      "imagen": "./images/CocheDeControlRemoto.jpeg",
       "stock": 15
     },
     {
@@ -218,7 +218,7 @@
       "precio": 49.99,
       "categoria": "Juegos",
       "codigo": "JU010",
-      "imagen": "ruta/imagen1.jpg",
+      "imagen": "./images/JuegoDeConstrucción.jpeg",
       "stock": 25
     }
   ]
